@@ -81,14 +81,12 @@ Tech Stack:
 ### Option A — Docker Compose (Recommended)
 
 ```bash
-# 1. Clone this repo
+
 git clone https://github.com/YOUR_USERNAME/dockerforge.git
 cd dockerforge
 
-# 2. Set your API key
 export GEMINI_API_KEY=your_key_here
 
-# 3. Start everything
 docker-compose up --build
 
 # Frontend → http://localhost:3000
@@ -111,12 +109,11 @@ docker run -d \
 ### Option C — Local Development
 
 ```bash
-# Backend
+
 cd backend
 pip install -r requirements.txt
 GEMINI_API_KEY=your_key uvicorn main:app --reload --port 8000
 
-# Frontend (new terminal)
 cd frontend
 npm install --legacy-peer-deps
 REACT_APP_API_URL=http://localhost:8000 npm start
@@ -206,20 +203,20 @@ The model is prompted with the full repository structure, detected languages, an
 ```
 dockerforge/
 ├── backend/
-│   ├── main.py            # FastAPI app + agent logic
+│   ├── main.py            
 │   ├── requirements.txt
 │   └── Dockerfile
 ├── frontend/
 │   ├── src/
-│   │   ├── App.js         # React UI
+│   │   ├── App.js         
 │   │   └── index.js
 │   ├── public/index.html
 │   ├── nginx.conf
 │   ├── package.json
 │   └── Dockerfile
-├── docker-compose.yml     # Multi-container setup
-├── Dockerfile             # Single-container build
-├── start.sh               # Single-container startup
+├── docker-compose.yml     
+├── Dockerfile             
+├── start.sh               
 └── README.md
 ```
 
